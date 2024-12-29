@@ -7,6 +7,7 @@ const Header = () => {
         <div className="w-2/12"></div>
         <div className="w-7/12">
           <div className="relative w-8/12 mx-auto">
+            <input
               type="search"
               id="default-search"
               className="block w-full p-4 pe-10 text-sm
