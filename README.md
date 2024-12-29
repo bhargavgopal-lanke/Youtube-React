@@ -68,3 +68,16 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+#### PROJECT INFORMATION   ####
+
+Project Components
+1. Head
+2. Body
+3. Sidebar
+4. MenuItems
+5. MainContainer
+6. ButtonList
+7. VedioContainer  => vedio card
+
