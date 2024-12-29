@@ -5,10 +5,10 @@ import MainContainer from "./MainContainer.jsx";
 const Body = () => {
   return (
     <div className="flex">
-      <div className="w-3/12">
+      <div className="w-2/12">
         <SideBar />
       </div>
-      <div className="w-9/12">
+      <div className="w-10/12">
         <MainContainer />
       </div>
     </div>
