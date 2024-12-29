@@ -5,7 +5,6 @@ import Layout from "./Components/Layout";
 function App() {
   return (
     <>
-      <Layout />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout />}>
