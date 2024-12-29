@@ -72,12 +72,12 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 #### PROJECT INFORMATION   ####
 
-Project Components
+Project Components and structure
+=> means it contains
 1. Head
-2. Body
-3. Sidebar
-4. MenuItems
-5. MainContainer
-6. ButtonList
-7. VedioContainer  => vedio card
+2. Body => Sidebar 
+3. body => MainContainer => ButtonList
+4. body => MainContainer => VedioContainer
+5. MenuItems
+5. VedioContainer  => vedio card
 
