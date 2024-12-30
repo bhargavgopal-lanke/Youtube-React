@@ -4,7 +4,7 @@ import Vediocontainer from "./Vediocontainer";
 
 const MainContainer = () => {
   return (
-    <div className="body-sec">
+    <div className="body-sec  mx-7 my-5">
       <ButtonList />
       <Vediocontainer />
     </div>
