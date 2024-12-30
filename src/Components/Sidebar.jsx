@@ -6,7 +6,7 @@ const Sidebar = () => {
   console.log("state", state);
   return (
     <>
-      {(state === true || state === "") && (
+      {state === true && (
         <div className="p-5 shadow-lg">
           <ul>
             <li>Home</li>

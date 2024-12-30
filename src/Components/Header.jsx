@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { BiBell, BiMicrophone, BiUserCircle } from "react-icons/bi";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { PiPlusBold } from "react-icons/pi";
@@ -7,12 +7,9 @@ import { useDispatch } from "react-redux";
 import { toggleMenu } from "../Slices/appSlice";
 
 const Header = () => {
-  const [trueToggle, setTrueToggle] = useState(true);
-
   const dispatch = useDispatch();
   const handleClick = () => {
-    setTrueToggle(!trueToggle);
-    dispatch(toggleMenu(trueToggle));
+    dispatch(toggleMenu());
   };
 
   return (
@@ -20,7 +17,10 @@ const Header = () => {
       <div className="flex py-2 px-4 items-center shadow-lg mb-3">
         <div className="w-2/12">
           <div className="flex items-center gap-5">
-            <GiHamburgerMenu className="text-2xl cursor-pointer" onClick={handleClick} />
+            <GiHamburgerMenu
+              className="text-2xl cursor-pointer"
+              onClick={handleClick}
+            />
             <img alt="youtube logo" src={youtubelogo} className="w-3/6" />
           </div>
         </div>

@@ -1,15 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  toggle: "",
+  toggle: true,
 };
 
 const appSlice = createSlice({
   name: "appInfo",
   initialState,
   reducers: {
-    toggleMenu: (state, action) => {
-      state.toggle = action.payload;
+    toggleMenu: (state) => {
+      state.toggle = !state.toggle;
     },
   },
 });
