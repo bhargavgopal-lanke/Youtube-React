@@ -16,7 +16,7 @@ const Header = () => {
         </div>
         <div className="w-7/12 flex items-center gap-5 justify-center my-auto">
           <div className="w-10/12 my-auto">
-            <div className="relative">
+            <div className="relative"> 
               <input
                 type="search"
                 id="default-search"
