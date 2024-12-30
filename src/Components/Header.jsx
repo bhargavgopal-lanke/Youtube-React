@@ -1,5 +1,5 @@
 import React from "react";
-import { BiMicrophone } from "react-icons/bi";
+import { BiBell, BiMicrophone, BiUserCircle } from "react-icons/bi";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { PiPlusBold } from "react-icons/pi";
 import youtubelogo from "../Images/youtubelogo.png";
@@ -46,18 +46,21 @@ const Header = () => {
               </div>
             </div>
           </div>
-          <div className=" rounded-full px-3 py-3 bg-gray-500">
+          <div className="rounded-full px-3 py-3 bg-gray-500">
             <BiMicrophone className="text-white" />
           </div>
         </div>
+
         <div className="w-3/12">
-          <div className="">
+          <div className="flex justify-around items-center">
             <button
               type="button"
               className="text-white w-4/12 bg-gray-500 content-center items-center rounded-full p-3"
             >
               <PiPlusBold className="text-xl inline-block mr-2" /> Create
             </button>
+            <BiBell className="text-white text-3xl" />
+            <BiUserCircle className="text-white text-3xl" />
           </div>
         </div>
       </div>
