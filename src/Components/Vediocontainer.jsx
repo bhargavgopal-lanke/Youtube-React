@@ -1,11 +1,11 @@
-import React from 'react'
+import React from "react";
 
 const Vediocontainer = () => {
   return (
-    <div>
-      Vedio Container
+    <div className="vedioContainer-sec">
+    
     </div>
-  )
-}
+  );
+};
 
-export default Vediocontainer
+export default Vediocontainer;
