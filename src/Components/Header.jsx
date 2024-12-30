@@ -3,14 +3,21 @@ import { BiBell, BiMicrophone, BiUserCircle } from "react-icons/bi";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { PiPlusBold } from "react-icons/pi";
 import youtubelogo from "../Images/youtubelogo.png";
+import { useDispatch } from "react-redux";
 
 const Header = () => {
+
+  const dispatch = useDispatch();
+  const handleClick = () => {
+    
+  }
+
   return (
     <div className="youtube-header-sec">
       <div className="flex py-2 px-4 items-center shadow-lg mb-3">
         <div className="w-2/12">
           <div className="flex items-center gap-5">
-            <GiHamburgerMenu className="text-2xl  " />
+            <GiHamburgerMenu className="text-2xl" onClick={handleClick} />
             <img alt="youtube logo" src={youtubelogo} className="w-3/6" />
           </div>
         </div>
