@@ -1,6 +1,11 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
 const Sidebar = () => {
+  const state = useSelector((store) => store?.headerInfo?.toggle);
+
+  console.log("state", state);
+
   return (
     <div className="p-5 shadow-lg">
       <ul>
