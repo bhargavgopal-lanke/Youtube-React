@@ -4,13 +4,13 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { PiPlusBold } from "react-icons/pi";
 import youtubelogo from "../Images/youtubelogo.png";
 import { useDispatch } from "react-redux";
+import { setSideNavToggle } from "../Slices/Header-Slice";
 
 const Header = () => {
-
   const dispatch = useDispatch();
   const handleClick = () => {
-    
-  }
+    dispatch(setSideNavToggle("true"));
+  };
 
   return (
     <div className="youtube-header-sec">

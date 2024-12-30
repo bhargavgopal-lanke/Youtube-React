@@ -14,4 +14,6 @@ const headerSlice = createSlice({
   },
 });
 
-export default headerSlice;
+export const { setSideNavToggle } = headerSlice.actions;
+
+export default headerSlice.reducer;
