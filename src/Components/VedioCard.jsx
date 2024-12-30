@@ -1,8 +1,8 @@
 import React from "react";
 
-const Vedios = ({ vedios }) => {
+const VedioCard = ({ vedios }) => {
   return (
-    <div className="flex">
+    <div className="flex flex-wrap">
       {vedios.map((val) => {
         const { snippet, statistics } = val || "";
         const { title, thumbnails, channelTitle } = snippet || "";
@@ -26,4 +26,4 @@ const Vedios = ({ vedios }) => {
   );
 };
 
-export default Vedios;
+export default VedioCard;

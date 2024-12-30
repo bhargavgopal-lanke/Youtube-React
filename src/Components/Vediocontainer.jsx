@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { YOUTUBE_VEDIOS_URL } from "../utils/Constants";
-import Vedios from "./Vedios";
+import VedioCard from "./VedioCard";
 
 
 const Vediocontainer = () => {
@@ -19,7 +19,7 @@ const Vediocontainer = () => {
 
   return (
     <div className="vedioContainer-sec">
-      <Vedios vedios={vedios} />
+      <VedioCard vedios={vedios} />
     </div>
   );
 };
