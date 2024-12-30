@@ -7,7 +7,7 @@ const Button = ({ name }) => {
         return (
           <button
             type="button"
-            className="px-5 py-3 m-2 bg-gray-100 rounded-full"
+            className="px-5 py-2 m-2 bg-gray-100 rounded-lg"
           >
             {val}
           </button>
