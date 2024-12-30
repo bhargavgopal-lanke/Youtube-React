@@ -7,10 +7,10 @@ import youtubelogo from "../Images/youtubelogo.png";
 const Header = () => {
   return (
     <div className="youtube-header-sec">
-      <div className="flex py-2 items-center">
+      <div className="flex py-2 px-4 items-center">
         <div className="w-2/12">
           <div className="flex items-center gap-5">
-            <GiHamburgerMenu className="text-xl text-white " />
+            <GiHamburgerMenu className="text-2xl text-white " />
             <img alt="youtube logo" src={youtubelogo} className="w-3/6" />
           </div>
         </div>
