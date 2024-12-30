@@ -4,8 +4,6 @@ import { useSelector } from "react-redux";
 const Sidebar = () => {
   const state = useSelector((store) => store?.headerInfo?.toggle);
 
-  console.log("state", state);
-
   return (
     <>
       {state === true && (
