@@ -14,7 +14,7 @@ const ButtonList = () => {
     "t-Series",
   ];
   return (
-    <div className="flex">
+    <div className="flex mb-5">
       <Button name={list} />
     </div>
   );
