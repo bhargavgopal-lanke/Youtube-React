@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BiBell, BiMicrophone, BiUserCircle } from "react-icons/bi";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { PiPlusBold } from "react-icons/pi";
@@ -26,7 +26,7 @@ const Header = () => {
         </div>
         <div className="w-7/12 flex items-center gap-5 justify-center my-auto">
           <div className="w-10/12 my-auto">
-            <div className="relative">
+            <div className="relative"> 
               <input
                 type="search"
                 id="default-search"
