@@ -2,13 +2,20 @@ import React from "react";
 import Button from "./Button";
 
 const ButtonList = () => {
+  const list = [
+    "All",
+    "Music",
+    "Telugu Cinema",
+    "Comedy",
+    "Cricket",
+    "Cooking",
+    "News",
+    "Gaming",
+    "t-Series",
+  ];
   return (
     <div className="flex">
-      <Button name="All" />
-      <Button name="Music" />
-      <Button name="Telugu Cinema" />
-      <Button name="Comedy" />
-      <Button name="t-Series" />
+      <Button name={list} />
     </div>
   );
 };
