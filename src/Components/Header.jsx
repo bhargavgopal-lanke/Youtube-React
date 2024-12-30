@@ -1,11 +1,19 @@
 import React from "react";
 import { BiMicrophone } from "react-icons/bi";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { PiPlusBold } from "react-icons/pi";
+import youtubelogo from "../Images/youtubelogo.png";
 
 const Header = () => {
   return (
     <div className="youtube-header-sec">
-      <div className="flex py-2">
-        <div className="w-2/12"></div>
+      <div className="flex py-2 items-center">
+        <div className="w-2/12">
+          <div className="flex items-center gap-5">
+            <GiHamburgerMenu className="text-xl text-white " />
+            <img alt="youtube logo" src={youtubelogo} className="w-3/6" />
+          </div>
+        </div>
         <div className="w-7/12 flex items-center gap-5 justify-center my-auto">
           <div className="w-10/12 my-auto">
             <div className="relative">
@@ -43,7 +51,14 @@ const Header = () => {
           </div>
         </div>
         <div className="w-3/12">
-          
+          <div className="">
+            <button
+              type="button"
+              className="text-white w-4/12 bg-gray-500 content-center items-center rounded-full p-3"
+            >
+              <PiPlusBold className="text-xl inline-block mr-2" /> Create
+            </button>
+          </div>
         </div>
       </div>
     </div>
