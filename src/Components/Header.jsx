@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BiBell, BiMicrophone, BiUserCircle } from "react-icons/bi";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { PiPlusBold } from "react-icons/pi";
@@ -7,9 +7,12 @@ import { useDispatch } from "react-redux";
 import { setSideNavToggle } from "../Slices/Header-Slice";
 
 const Header = () => {
+  const [trueToggle, setTrueToggle] = useState(false);
+
   const dispatch = useDispatch();
   const handleClick = () => {
-    dispatch(setSideNavToggle("true"));
+    setTrueToggle(!trueToggle);
+    dispatch(setSideNavToggle(trueToggle));
   };
 
   return (
