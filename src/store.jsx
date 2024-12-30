@@ -1,9 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
-import headerSlice from "./Slices/Header-Slice";
+import appSlice from "./Slices/appSlice";
 
 const store = configureStore({
   reducer: {
-    headerInfo: headerSlice,
+    appInfo: appSlice,
   },
 });
 

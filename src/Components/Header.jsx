@@ -4,15 +4,15 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { PiPlusBold } from "react-icons/pi";
 import youtubelogo from "../Images/youtubelogo.png";
 import { useDispatch } from "react-redux";
-import { setSideNavToggle } from "../Slices/Header-Slice";
+import { toggleMenu } from "../Slices/appSlice";
 
 const Header = () => {
-  const [trueToggle, setTrueToggle] = useState(false);
+  const [trueToggle, setTrueToggle] = useState(true);
 
   const dispatch = useDispatch();
   const handleClick = () => {
     setTrueToggle(!trueToggle);
-    dispatch(setSideNavToggle(trueToggle));
+    dispatch(toggleMenu(trueToggle));
   };
 
   return (
@@ -20,7 +20,7 @@ const Header = () => {
       <div className="flex py-2 px-4 items-center shadow-lg mb-3">
         <div className="w-2/12">
           <div className="flex items-center gap-5">
-            <GiHamburgerMenu className="text-2xl" onClick={handleClick} />
+            <GiHamburgerMenu className="text-2xl cursor-pointer" onClick={handleClick} />
             <img alt="youtube logo" src={youtubelogo} className="w-3/6" />
           </div>
         </div>
