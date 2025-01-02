@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { YOUTUBE_VEDIOS_URL } from "../utils/Constants";
-import Vedios from "./Vedios";
-
+import VedioCard from "./VedioCard";
+import { Link } from "react-router";
 
 const Vediocontainer = () => {
   const [vedios, setVedios] = useState([]);
@@ -15,11 +15,16 @@ const Vediocontainer = () => {
   useEffect(() => {
     fetchVediosList();
   }, []);
-  
 
   return (
-    <div className="vedioContainer-sec">
-      <Vedios vedios={vedios} />
+    <div className="vedioContainer-sec flex flex-wrap">
+      {vedios.map((val) => {
+        return (
+          <Link to={"/watch?v=" + val.id} key={val.id}>
+            <VedioCard  val={val} />
+          </Link>
+        );
+      })}
     </div>
   );
 };

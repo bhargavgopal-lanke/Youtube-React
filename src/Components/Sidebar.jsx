@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import { Link } from "react-router";
 
 const Sidebar = () => {
   const state = useSelector((store) => store?.appInfo?.toggle);
@@ -12,7 +13,9 @@ const Sidebar = () => {
       {/* {state === true && ( */}
       <div className="p-5 shadow-lg">
         <ul>
-          <li>Home</li>
+          <li>
+            <Link to={"/"}>Home</Link>
+          </li>
           <li>Shorts</li>
           <li>Vedios</li>
           <li>Live</li>
@@ -24,7 +27,9 @@ const Sidebar = () => {
           <li>Gaming</li>
           <li>Movies</li>
         </ul>
-        <h1 className="font-bold py-4">Watch Later</h1>
+        <h1 className="font-bold py-4">
+          <Link to={"/watch"}>Watch Later</Link>
+        </h1>
         <ul>
           <li>Music</li>
           <li>Sports</li>
