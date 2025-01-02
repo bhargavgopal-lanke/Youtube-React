@@ -35,11 +35,11 @@ const WatchPage = () => {
           allowfullscreen
         ></iframe>
 
-        {comments.items.map((commentsList) => {
-          const { snippet } = commentsList;
+        {comments?.items?.map((commentsList) => {
+          const { id, snippet } = commentsList;
 
           return (
-            <ul>
+            <ul key={id}>
               <li>{snippet?.topLevelComment?.snippet?.textOriginal}</li>
             </ul>
           );
