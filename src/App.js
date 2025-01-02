@@ -16,7 +16,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Body />}>
               <Route index element={<MainContainer />} />
-              <Route path="/watch/:id" element={<WatchPage />} />
+              <Route path="/watch" element={<WatchPage />} />
             </Route>
           </Routes>
         </BrowserRouter>

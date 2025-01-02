@@ -16,14 +16,12 @@ const Vediocontainer = () => {
     fetchVediosList();
   }, []);
 
-  
-
   return (
     <div className="vedioContainer-sec flex flex-wrap">
       {vedios.map((val) => {
         return (
-          <Link to={`/watch/${val.id}`}>
-            <VedioCard key={val.id} val={val} />
+          <Link to={"/watch?v=" + val.id} key={val.id}>
+            <VedioCard  val={val} />
           </Link>
         );
       })}

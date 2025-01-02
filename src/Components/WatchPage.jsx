@@ -1,12 +1,23 @@
-import React from "react";
-import { useParams } from "react-router";
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { useSearchParams } from "react-router";
+import { closeMenu } from "../Slices/appSlice";
 
 const WatchPage = () => {
-  const { id } = useParams();
+  const dispatch = useDispatch();
+  const [searchParams] = useSearchParams();
 
-  console.log("id", id);
+  console.log("id", searchParams.get("v"));
 
-  return <div>WatchPage</div>;
+  useEffect(() => {
+    dispatch(closeMenu());
+  }, [dispatch]);
+
+  return (
+    <div className="WatchPage-sec">
+      <div>Watch page</div>
+    </div>
+  );
 };
 
 export default WatchPage;
