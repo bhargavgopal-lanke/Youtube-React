@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { BiBell, BiMicrophone, BiUserCircle } from "react-icons/bi";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { PiPlusBold } from "react-icons/pi";
@@ -22,7 +22,7 @@ const Header = () => {
               onClick={handleClick}
             />
             <img alt="youtube logo" src={youtubelogo} className="w-3/6" />
-          </div>
+          </div> 
         </div>
         <div className="w-7/12 flex items-center gap-5 justify-center my-auto">
           <div className="w-10/12 my-auto">

@@ -1,6 +1,6 @@
 import React from "react";
 import SideBar from "./Sidebar.jsx";
-import MainContainer from "./MainContainer.jsx";
+import { Outlet } from "react-router";
 
 const Body = () => {
   return (
@@ -9,7 +9,7 @@ const Body = () => {
         <SideBar />
       </div>
       <div className="w-10/12">
-        <MainContainer />
+        <Outlet />
       </div>
     </div>
   );
