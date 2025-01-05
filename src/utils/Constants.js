@@ -8,3 +8,6 @@ export const YOUTUBE_API_COMMENTS =
   "https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet%2Creplies&key=" +
   GOOGLE_API_KEY +
   "&videoId=";
+
+export const YOUTUBE_SEARCH_API =
+  "http://suggestqueries.google.com/complete/search?client=youtube&ds=yt&q=";
