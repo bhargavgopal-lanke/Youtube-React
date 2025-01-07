@@ -74,11 +74,11 @@ const Header = () => {
                   />
                 </svg>
               </div>
-              <div className="fixed bg-white w-6/12 py-5 px-2">
+              <div className="fixed bg-white py-5 px-2 w-[42rem]">
                 <ul>
-                  <li>Iphone</li>
-                  <li>Iphone Pro</li>
-                  <li>Iphone Pro max</li>
+                  <li>🔍 Iphone</li>
+                  <li>🔍 Iphone Pro</li>
+                  <li>🔍 Iphone Pro max</li>
                 </ul>
               </div>
             </div>
