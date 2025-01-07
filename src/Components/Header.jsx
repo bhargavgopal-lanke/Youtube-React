@@ -51,7 +51,7 @@ const Header = () => {
                 type="search"
                 id="default-search"
                 className="block w-full p-4 pe-10 text-sm
-                rounded-full"
+                rounded-full bg-gray-500 text-white"
                 placeholder="Search"
                 value={searchText}
                 onChange={(e) => setSearchText(e.target.value)}
@@ -73,6 +73,13 @@ const Header = () => {
                     d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
                   />
                 </svg>
+              </div>
+              <div className="fixed bg-white w-6/12 py-5 px-2">
+                <ul>
+                  <li>Iphone</li>
+                  <li>Iphone Pro</li>
+                  <li>Iphone Pro max</li>
+                </ul>
               </div>
             </div>
           </div>
