@@ -78,7 +78,7 @@ const Header = () => {
                 </svg>
               </div>
               {showSuggestions && (
-                <div className="fixed bg-white py-5 px-2 w-[42rem] shawdow-lg rounded-lg">
+                <div className="absolute bg-white py-5 px-2 w-[42rem] shawdow-lg rounded-lg">
                   <ul>
                     {suggestions.map((val) => {
                       return (
