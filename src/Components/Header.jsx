@@ -33,14 +33,6 @@ const Header = () => {
     setSuggestions(searchJson[1]);
   };
 
-  const handleBlur = () => {
-    setShowSuggestions(false);
-  };
-
-  const handleFocus = () => {
-    setShowSuggestions(true);
-  };
-
   return (
     <div className="youtube-header-sec">
       <div className="flex py-2 px-4 items-center shadow-lg mb-3">
@@ -64,8 +56,8 @@ const Header = () => {
                 placeholder="Search"
                 value={searchText}
                 onChange={(e) => setSearchText(e.target.value)}
-                onFocus={handleFocus}
-                onBlur={handleBlur}
+                onFocus={() => setShowSuggestions(true)}
+                onBlur={() => setShowSuggestions(false)}
                 required
               />
               <div className="absolute inset-y-0 end-0 flex items-center pe-3 pointer-events-none">
