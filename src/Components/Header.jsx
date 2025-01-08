@@ -9,6 +9,7 @@ import { YOUTUBE_SEARCH_API } from "../utils/Constants";
 
 const Header = () => {
   const [searchText, setSearchText] = useState("");
+  const [suggestions, setSuggestions] = useState([]);
 
   const dispatch = useDispatch();
   const handleClick = () => {
@@ -29,8 +30,11 @@ const Header = () => {
     console.log("searchText-API", searchText);
     const data = await fetch(YOUTUBE_SEARCH_API + searchText);
     const searchJson = await data.json();
-    console.log("searchJson", searchJson[1]);
+    setSuggestions(searchJson[1]);
+    // console.log("searchJson", searchJson[1]);
   };
+
+  console.log("suggestions", suggestions);
 
   return (
     <div className="youtube-header-sec">
@@ -45,7 +49,7 @@ const Header = () => {
           </div>
         </div>
         <div className="w-7/12 flex items-center gap-5 justify-center my-auto">
-          <div className="w-10/12 my-auto"> 
+          <div className="w-10/12 my-auto">
             <div className="relative">
               <input
                 type="search"
@@ -74,11 +78,25 @@ const Header = () => {
                   />
                 </svg>
               </div>
-              <div className="fixed bg-white py-5 px-2 w-[42rem]">
+              <div className="fixed bg-white py-5 px-2 w-[42rem] shawdow-lg rounded-lg">
                 <ul>
-                  <li>🔍 Iphone</li>
-                  <li>🔍 Iphone Pro</li>
-                  <li>🔍 Iphone Pro max</li>
+                  {suggestions.map((val, index) => {
+                    return (
+                      <li
+                        className="py-2 shadow-sm hover:bg-gray-100"
+                        key={index}
+                      >
+                        🔍 {val}
+                      </li>
+                    );
+                  })}
+
+                  {/* <li className="py-2 shadow-sm hover:bg-gray-100">
+                    🔍 Iphone Pro
+                  </li>
+                  <li className="py-2 shadow-sm hover:bg-gray-100">
+                    🔍 Iphone Pro max
+                  </li> */}
                 </ul>
               </div>
             </div>
