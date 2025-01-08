@@ -1,15 +1,44 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { BiBell, BiMicrophone, BiUserCircle } from "react-icons/bi";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { PiPlusBold } from "react-icons/pi";
 import youtubelogo from "../Images/youtubelogo.png";
 import { useDispatch } from "react-redux";
 import { toggleMenu } from "../Slices/appSlice";
+import { YOUTUBE_SEARCH_API } from "../utils/Constants";
 
 const Header = () => {
+  const [searchText, setSearchText] = useState("");
+  const [suggestions, setSuggestions] = useState([]);
+  const [showSuggestions, setShowSuggestions] = useState(Boolean);
+
   const dispatch = useDispatch();
   const handleClick = () => {
     dispatch(toggleMenu());
+  };
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      searchAPICall();
+    }, 200);
+
+    return () => {
+      clearInterval(timer);
+    };
+  }, [searchText]);
+
+  const searchAPICall = async () => {
+    const data = await fetch(YOUTUBE_SEARCH_API + searchText);
+    const searchJson = await data.json();
+    setSuggestions(searchJson[1]);
+  };
+
+  const handleBlur = () => {
+    setShowSuggestions(false);
+  };
+
+  const handleFocus = () => {
+    setShowSuggestions(true);
   };
 
   return (
@@ -22,19 +51,21 @@ const Header = () => {
               onClick={handleClick}
             />
             <img alt="youtube logo" src={youtubelogo} className="w-3/6" />
-          </div> 
+          </div>
         </div>
         <div className="w-7/12 flex items-center gap-5 justify-center my-auto">
           <div className="w-10/12 my-auto">
-            <div className="relative"> 
+            <div className="relative">
               <input
                 type="search"
                 id="default-search"
                 className="block w-full p-4 pe-10 text-sm
-               text-gray-900 border border-gray-300 rounded-full
-                bg-gray-50 focus:ring-blue-500 focus:border-blue-500
-                 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark: dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                rounded-full bg-gray-500 text-white"
                 placeholder="Search"
+                value={searchText}
+                onChange={(e) => setSearchText(e.target.value)}
+                onFocus={handleFocus}
+                onBlur={handleBlur}
                 required
               />
               <div className="absolute inset-y-0 end-0 flex items-center pe-3 pointer-events-none">
@@ -54,6 +85,22 @@ const Header = () => {
                   />
                 </svg>
               </div>
+              {showSuggestions && (
+                <div className="fixed bg-white py-5 px-2 w-[42rem] shawdow-lg rounded-lg">
+                  <ul>
+                    {suggestions.map((val) => {
+                      return (
+                        <li
+                          className="py-2 shadow-sm hover:bg-gray-100"
+                          key={val}
+                        >
+                          🔍 {val}
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
+              )}
             </div>
           </div>
           <div className="rounded-full px-3 py-3 bg-gray-500">
