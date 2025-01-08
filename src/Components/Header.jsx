@@ -3,9 +3,10 @@ import { BiBell, BiMicrophone, BiUserCircle } from "react-icons/bi";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { PiPlusBold } from "react-icons/pi";
 import youtubelogo from "../Images/youtubelogo.png";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { toggleMenu } from "../Slices/appSlice";
 import { YOUTUBE_SEARCH_API } from "../utils/Constants";
+import { cacheResults } from "../Slices/SearchDataSlice";
 
 const Header = () => {
   const [searchText, setSearchText] = useState("");
@@ -13,14 +14,24 @@ const Header = () => {
   const [showSuggestions, setShowSuggestions] = useState(Boolean);
 
   const dispatch = useDispatch();
+
+  const searchCache = useSelector((store) => store.searchInfo);
+
   const handleClick = () => {
     dispatch(toggleMenu());
   };
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      searchAPICall();
-    }, 200);
+      // if my cache has the text which I'm searching currently
+      // then set that data which is already stored in store
+      // to setSuggestions or else make an APi call and dispatch the data.
+      if (searchCache[searchText]) {
+        setSuggestions(searchCache[searchText]);
+      } else {
+        searchAPICall();
+      }
+    }, 200); 
 
     return () => {
       clearInterval(timer);
@@ -31,6 +42,11 @@ const Header = () => {
     const data = await fetch(YOUTUBE_SEARCH_API + searchText);
     const searchJson = await data.json();
     setSuggestions(searchJson[1]);
+
+    // update cache
+    // dispatch an action 
+    // state is the key which I'm typing and payload is the API data.
+    dispatch(cacheResults({ [searchText]: searchJson[1] }));
   };
 
   return (

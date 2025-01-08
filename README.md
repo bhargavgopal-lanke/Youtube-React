@@ -81,3 +81,8 @@ Project Components and structure
 5. MenuItems
 5. VedioContainer  => vedio card
 
+
+
+# CACHE:
+timeComplexity to search in an array = O(n)
+timeComplexity to search in an object = O(1)
