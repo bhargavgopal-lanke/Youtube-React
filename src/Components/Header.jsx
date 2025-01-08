@@ -85,10 +85,10 @@ const Header = () => {
                   />
                 </svg>
               </div>
-              <div className="fixed bg-white py-5 px-2 w-[42rem] shawdow-lg rounded-lg">
-                <ul>
-                  {showSuggestions &&
-                    suggestions.map((val) => {
+              {showSuggestions && (
+                <div className="fixed bg-white py-5 px-2 w-[42rem] shawdow-lg rounded-lg">
+                  <ul>
+                    {suggestions.map((val) => {
                       return (
                         <li
                           className="py-2 shadow-sm hover:bg-gray-100"
@@ -98,15 +98,9 @@ const Header = () => {
                         </li>
                       );
                     })}
-
-                  {/* <li className="py-2 shadow-sm hover:bg-gray-100">
-                    🔍 Iphone Pro
-                  </li>
-                  <li className="py-2 shadow-sm hover:bg-gray-100">
-                    🔍 Iphone Pro max
-                  </li> */}
-                </ul>
-              </div>
+                  </ul>
+                </div>
+              )}
             </div>
           </div>
           <div className="rounded-full px-3 py-3 bg-gray-500">
