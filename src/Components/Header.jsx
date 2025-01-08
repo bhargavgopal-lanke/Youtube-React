@@ -10,6 +10,7 @@ import { YOUTUBE_SEARCH_API } from "../utils/Constants";
 const Header = () => {
   const [searchText, setSearchText] = useState("");
   const [suggestions, setSuggestions] = useState([]);
+  const [showSuggestions, setShowSuggestions] = useState(Boolean);
 
   const dispatch = useDispatch();
   const handleClick = () => {
@@ -27,14 +28,18 @@ const Header = () => {
   }, [searchText]);
 
   const searchAPICall = async () => {
-    console.log("searchText-API", searchText);
     const data = await fetch(YOUTUBE_SEARCH_API + searchText);
     const searchJson = await data.json();
     setSuggestions(searchJson[1]);
-    // console.log("searchJson", searchJson[1]);
   };
 
-  console.log("suggestions", suggestions);
+  const handleBlur = () => {
+    setShowSuggestions(false);
+  };
+
+  const handleFocus = () => {
+    setShowSuggestions(true);
+  };
 
   return (
     <div className="youtube-header-sec">
@@ -59,6 +64,8 @@ const Header = () => {
                 placeholder="Search"
                 value={searchText}
                 onChange={(e) => setSearchText(e.target.value)}
+                onFocus={handleFocus}
+                onBlur={handleBlur}
                 required
               />
               <div className="absolute inset-y-0 end-0 flex items-center pe-3 pointer-events-none">
@@ -80,16 +87,17 @@ const Header = () => {
               </div>
               <div className="fixed bg-white py-5 px-2 w-[42rem] shawdow-lg rounded-lg">
                 <ul>
-                  {suggestions.map((val, index) => {
-                    return (
-                      <li
-                        className="py-2 shadow-sm hover:bg-gray-100"
-                        key={index}
-                      >
-                        🔍 {val}
-                      </li>
-                    );
-                  })}
+                  {showSuggestions &&
+                    suggestions.map((val) => {
+                      return (
+                        <li
+                          className="py-2 shadow-sm hover:bg-gray-100"
+                          key={val}
+                        >
+                          🔍 {val}
+                        </li>
+                      );
+                    })}
 
                   {/* <li className="py-2 shadow-sm hover:bg-gray-100">
                     🔍 Iphone Pro
