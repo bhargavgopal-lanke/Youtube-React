@@ -5,7 +5,7 @@ const initialState = {
 };
 
 const searchSlice = createSlice({
-  name: "searchSlice",
+  name: "search",
   initialState,
   reducers: {
     setSearchData: (state, action) => {
