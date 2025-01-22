@@ -18,8 +18,10 @@ const WatchPage = () => {
           referrerpolicy="strict-origin-when-cross-origin"
           allowfullscreen
         ></iframe>
-
-        <CommentsContainer vedioId={selectedVedioId} />
+        <div>
+          <h1 className="text-3xl font-bold my-5">Comments:</h1>
+          <CommentsContainer vedioId={selectedVedioId} />
+        </div>
       </div>
     </div>
   );
