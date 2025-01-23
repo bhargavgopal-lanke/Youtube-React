@@ -1,25 +1,9 @@
-import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import CommentsContainer from "./CommentsContainer";
 import { useSearchParams } from "react-router";
-import { closeMenu } from "../Slices/appSlice";
-import { YOUTUBE_API_COMMENTS } from "../utils/Constants";
 
 const WatchPage = () => {
-  const dispatch = useDispatch();
   const [searchParams] = useSearchParams();
   const selectedVedioId = searchParams.get("v");
-  const [comments, setComments] = useState();
-
-  useEffect(() => {
-    fetchComments();
-    dispatch(closeMenu());
-  }, [dispatch]);
-
-  const fetchComments = async () => {
-    const commentsAPI = await fetch(YOUTUBE_API_COMMENTS + selectedVedioId);
-    const commentsJson = await commentsAPI.json();
-    setComments(commentsJson);
-  };
 
   return (
     <div className="WatchPage-sec">
@@ -34,16 +18,10 @@ const WatchPage = () => {
           referrerpolicy="strict-origin-when-cross-origin"
           allowfullscreen
         ></iframe>
-
-        {comments?.items?.map((commentsList) => {
-          const { id, snippet } = commentsList;
-
-          return (
-            <ul key={id}>
-              <li>{snippet?.topLevelComment?.snippet?.textOriginal}</li>
-            </ul>
-          );
-        })}
+        <div>
+          <h1 className="text-3xl font-bold my-5">Comments:</h1>
+          <CommentsContainer vedioId={selectedVedioId} />
+        </div>
       </div>
     </div>
   );
