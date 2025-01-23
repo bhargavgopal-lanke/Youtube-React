@@ -23,9 +23,19 @@ const CommentsContainer = ({ vedioId }) => {
   return (
     <div>
       {comments?.items?.map((commentsList) => {
+        const { replies } = commentsList;
         return (
           <div>
             <Comment key={commentsList?.id} data={commentsList} />
+            <div
+              className="replies pl-5 ml-5"
+              style={{ borderLeft: "1px solid black" }}
+            >
+              {replies &&
+                replies?.comments?.map((replies) => {
+                  return <Comment key={replies?.id} data={replies} />;
+                })}
+            </div>
           </div>
         );
       })}{" "}

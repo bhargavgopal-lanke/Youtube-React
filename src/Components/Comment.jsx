@@ -1,12 +1,9 @@
 import React from "react";
 
 const Comment = ({ data }) => {
-  const { snippet, replies } = data;
-  const {
-    textOriginal,
-    authorDisplayName,
-    authorProfileImageUrl,
-  } = snippet?.topLevelComment?.snippet;
+  const { snippet } = data;
+  const { textOriginal, authorDisplayName, authorProfileImageUrl } =
+    snippet?.topLevelComment?.snippet || snippet;
 
   return (
     <div className="flex shadow-lg bg-gray-200 p-2 rounded-lg ">
