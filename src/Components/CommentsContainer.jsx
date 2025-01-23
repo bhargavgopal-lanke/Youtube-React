@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { closeMenu } from "../Slices/appSlice";
 import { YOUTUBE_API_COMMENTS } from "../utils/Constants";
+import Comment from "./Comment";
 
 const CommentsContainer = ({ vedioId }) => {
   const dispatch = useDispatch();
@@ -22,12 +23,10 @@ const CommentsContainer = ({ vedioId }) => {
   return (
     <div>
       {comments?.items?.map((commentsList) => {
-        const { id, snippet } = commentsList;
-
         return (
-          <ul key={id}>
-            <li>{snippet?.topLevelComment?.snippet?.textOriginal}</li>
-          </ul>
+          <div>
+            <Comment key={commentsList?.id} data={commentsList} />
+          </div>
         );
       })}{" "}
     </div>
