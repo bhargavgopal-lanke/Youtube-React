@@ -1,6 +1,6 @@
-import CommentsContainer from "./CommentsContainer";
+import CommentsContainer from "./Comments/CommentsContainer";
 import { useSearchParams } from "react-router";
-import LiveChat from "./LiveChat";
+import LiveChat from "./LiveChat/LiveChat";
 
 const WatchPage = () => {
   const [searchParams] = useSearchParams();

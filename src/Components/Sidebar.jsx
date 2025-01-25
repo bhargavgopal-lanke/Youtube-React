@@ -10,32 +10,34 @@ const Sidebar = () => {
 
   return (
     <>
-      {/* {state === true && ( */}
-      <div className="p-5 shadow-lg">
-        <ul>
-          <li>
-            <Link to={"/"}>Home</Link>
-          </li>
-          <li>Shorts</li>
-          <li>Vedios</li>
-          <li>Live</li>
-        </ul>
-        <h1 className="font-bold py-4">Subscriptions</h1>
-        <ul>
-          <li>Music</li>
-          <li>Sports</li>
-          <li>Gaming</li>
-          <li>Movies</li>
-        </ul>
-        <h1 className="font-bold py-4">
-          <Link to={"/watch"}>Watch Later</Link>
-        </h1>
-        <ul>
-          <li>Music</li>
-          <li>Sports</li>
-          <li>Gaming</li>
-          <li>Movies</li>
-        </ul>
+      <div className="w-4/12">
+        {/* {state === true && ( */}
+        <div className="p-5 shadow-lg">
+          <ul>
+            <li>
+              <Link to={"/"}>Home</Link>
+            </li>
+            <li>Shorts</li>
+            <li>Vedios</li>
+            <li>Live</li>
+          </ul>
+          <h1 className="font-bold py-4">Subscriptions</h1>
+          <ul>
+            <li>Music</li>
+            <li>Sports</li>
+            <li>Gaming</li>
+            <li>Movies</li>
+          </ul>
+          <h1 className="font-bold py-4">
+            <Link to={"/watch"}>Watch Later</Link>
+          </h1>
+          <ul>
+            <li>Music</li>
+            <li>Sports</li>
+            <li>Gaming</li>
+            <li>Movies</li>
+          </ul>
+        </div>
       </div>
       {/* )} */}
     </>
