@@ -1,12 +1,12 @@
-import React from 'react'
+import React from "react";
 
-const ChatMessage = () => {
+const ChatMessage = ({ image, reply }) => {
   return (
-    <div className='flex'>
-        <img src='' alt="chat-img" />
-        <p className='pl-2'>Chat reply</p>
+    <div className="flex items-center">
+      <img src={image} alt="chat-img" className="rounded-full w-10" />
+      <p className="pl-2">{reply}</p>
     </div>
-  )
-}
+  );
+};
 
-export default ChatMessage
+export default ChatMessage;
