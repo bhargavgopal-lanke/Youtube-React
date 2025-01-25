@@ -3,10 +3,13 @@ import ChatMessage from "./ChatMessage";
 
 const LiveChat = () => {
   useEffect(() => {
-    const i = setInterval(() => {}, 2000);
+    const i = setInterval(() => {
+      // Api Polling
+      console.log("Api polling");
+    }, 2000);
 
     return () => {
-      clearInterval(i());
+      clearInterval(i);
     };
   }, []);
 
