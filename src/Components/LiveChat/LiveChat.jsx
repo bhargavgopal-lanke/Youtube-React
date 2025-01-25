@@ -1,11 +1,11 @@
-import React from 'react'
+import React from "react";
 
 const LiveChat = () => {
   return (
-    <div className='m-2 p-2 border border-black'>
+    <div className="w-full h-[600px] m-2 p-2 border border-black">
       Live Chat
     </div>
-  )
-}
+  );
+};
 
-export default LiveChat
+export default LiveChat;
