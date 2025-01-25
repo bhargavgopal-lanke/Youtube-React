@@ -2,16 +2,19 @@ import React, { useEffect } from "react";
 import ChatMessage from "./ChatMessage";
 import { useDispatch, useSelector } from "react-redux";
 import { setLiveChat } from "../../Slices/LiveChatSlice";
+import { getRandomName } from "../../utils/RandomNameGenerator";
 
 const LiveChat = () => {
   const dispatch = useDispatch();
+
   useEffect(() => {
     const i = setInterval(() => {
       // Api Polling
-      console.log("Api polling");
+      const randomName = getRandomName();
+
       dispatch(
         setLiveChat({
-          name: "Bhargav",
+          name: randomName,
           reply: "Api Polling 🚀",
         })
       );
