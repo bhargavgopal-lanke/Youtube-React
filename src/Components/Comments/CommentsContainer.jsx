@@ -4,7 +4,7 @@ import { closeMenu } from "../../Slices/appSlice";
 import { YOUTUBE_API_COMMENTS } from "../../utils/Constants";
 import Comment from "./Comment";
 
-const CommentsContainer = ({ vedioId }) => {  
+const CommentsContainer = ({ vedioId }) => {
   const dispatch = useDispatch();
 
   const [comments, setComments] = useState();
@@ -22,10 +22,10 @@ const CommentsContainer = ({ vedioId }) => {
 
   return (
     <div>
-      {comments?.items?.map((commentsList) => {
+      {comments?.items?.map((commentsList, i) => {
         const { replies } = commentsList;
         return (
-          <div>
+          <div key={commentsList?.id}>
             <Comment key={commentsList?.id} data={commentsList} />
             <div
               className="replies pl-5 ml-5"
