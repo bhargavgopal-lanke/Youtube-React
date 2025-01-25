@@ -31,6 +31,7 @@ const LiveChat = () => {
   const { messages } = useSelector((store) => store?.LiveChatInfo);
 
   const handleSubmit = (e) => {
+    e.preventDefault();
     const randomName = getRandomName();
     dispatch(
       setLiveChat({
@@ -54,7 +55,10 @@ const LiveChat = () => {
           })
         }
       </div>
-      <div className="border border-black p-2">
+      <form
+        className="border border-black p-2"
+        onSubmit={(e) => handleSubmit(e)}
+      >
         <input
           name="chat"
           type="text"
@@ -65,12 +69,11 @@ const LiveChat = () => {
         />
         <button
           type="submit"
-          onClick={handleSubmit}
           className="w-38 px-8 py-3 ml-3 bg-slate-500 border border-black text-white"
         >
           send
         </button>
-      </div>
+      </form>
     </>
   );
 };
