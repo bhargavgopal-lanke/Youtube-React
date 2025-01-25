@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { YOUTUBE_VEDIOS_URL } from "../utils/Constants";
+import { YOUTUBE_VEDIOS_URL } from "../../utils/Constants";
 import VedioCard, { AdVedioCard } from "./VedioCard";
 import { Link } from "react-router";
 
