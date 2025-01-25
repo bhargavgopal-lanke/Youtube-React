@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import ChatMessage from "./ChatMessage";
 import { useDispatch, useSelector } from "react-redux";
 import { setLiveChat } from "../../Slices/LiveChatSlice";
@@ -7,6 +7,8 @@ import { getRandomStrings } from "../../utils/helper/RandomStrings";
 
 const LiveChat = () => {
   const dispatch = useDispatch();
+
+  const [chatMsg, setChatMsg] = useState();
 
   useEffect(() => {
     const i = setInterval(() => {
@@ -28,18 +30,46 @@ const LiveChat = () => {
 
   const { messages } = useSelector((store) => store?.LiveChatInfo);
 
+  const handleSubmit = (e) => {
+    const randomName = getRandomName();
+    dispatch(
+      setLiveChat({
+        name: randomName,
+        reply: chatMsg,
+      })
+    );
+    setChatMsg("");
+  };
+
   return (
-    <div
-      className="w-full h-[600px] m-2 p-2 border
+    <>
+      <div
+        className="w-full h-[600px] m-2 p-2 border
      border-black bg-slate-100 rounded-lg overflow-y-scroll flex flex-col-reverse"
-    >
-      {
-        // Disclaimer: Don't use indexes as keys.
-        messages.map((msgs, i) => {
-          return <ChatMessage key={i} name={msgs.name} reply={msgs.reply} />;
-        })
-      }
-    </div>
+      >
+        {
+          // Disclaimer: Don't use indexes as keys.
+          messages.map((msgs, i) => {
+            return <ChatMessage key={i} name={msgs.name} reply={msgs.reply} />;
+          })
+        }
+      </div>
+      <input
+        name="chat"
+        type="text"
+        value={chatMsg}
+        alt="chat-box"
+        onChange={(e) => setChatMsg(e?.target?.value)}
+        className="border border-black p-3"
+      />
+      <button
+        type="submit"
+        onClick={handleSubmit}
+        className="w-30 px-5 py-3 ml-3 bg-slate-500 border border-black text-white"
+      >
+        send
+      </button>
+    </>
   );
 };
 
