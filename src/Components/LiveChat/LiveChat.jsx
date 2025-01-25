@@ -3,6 +3,7 @@ import ChatMessage from "./ChatMessage";
 import { useDispatch, useSelector } from "react-redux";
 import { setLiveChat } from "../../Slices/LiveChatSlice";
 import { getRandomName } from "../../utils/helper/RandomNameGenerator";
+import { getRandomStrings } from "../../utils/helper/RandomStrings";
 
 const LiveChat = () => {
   const dispatch = useDispatch();
@@ -11,11 +12,11 @@ const LiveChat = () => {
     const i = setInterval(() => {
       // Api Polling
       const randomName = getRandomName();
-
+      const randomMsgs = getRandomStrings() + " 🚀";
       dispatch(
         setLiveChat({
           name: randomName,
-          reply: "Api Polling 🚀",
+          reply: randomMsgs,
         })
       );
     }, 2000);
