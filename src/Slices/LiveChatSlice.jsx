@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { OFFSETLIVECHAT } from "../utils/Constants";
+import { LIVECHATCOUNT } from "../utils/Constants";
 
 const initialState = {
   messages: [],
@@ -10,7 +10,7 @@ const LiveChatReducer = createSlice({
   reducers: {
     setLiveChat: (state, action) => {
       // at position 10 remove 1 item
-      state.messages.splice(OFFSETLIVECHAT, 1);
+      state.messages.splice(LIVECHATCOUNT, 1);
       state.messages.unshift(action.payload);
     },
   },

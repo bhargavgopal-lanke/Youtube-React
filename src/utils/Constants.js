@@ -16,4 +16,4 @@ export const YOUTUBE_SEARCH_API =
     "https://yt3.ggpht.com/plcVYITpmZqGO7TLpDkJr7E6E6FLCT6KC67zAZPXEBvx_hqu8M7mxsabJaFAGydykYdds7Yv=s48-c-k-c0x00ffffff-no-rj";
 
     // live chat count
-    export const LIVECHATCOUNT = 6;
+    export const LIVECHATCOUNT = 15;
