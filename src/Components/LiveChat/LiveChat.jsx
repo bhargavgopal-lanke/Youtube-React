@@ -31,7 +31,7 @@ const LiveChat = () => {
   return (
     <div
       className="w-full h-[600px] m-2 p-2 border
-     border-black bg-slate-100 rounded-lg overflow-y-scroll"
+     border-black bg-slate-100 rounded-lg overflow-y-scroll flex flex-col-reverse"
     >
       {
         // Disclaimer: Don't use indexes as keys.
