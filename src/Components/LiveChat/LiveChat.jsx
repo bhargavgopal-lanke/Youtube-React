@@ -12,7 +12,7 @@ const LiveChat = () => {
       dispatch(
         setLiveChat({
           name: "Bhargav",
-          reply: "Api Polling",
+          reply: "Api Polling 🚀",
         })
       );
     }, 2000);
