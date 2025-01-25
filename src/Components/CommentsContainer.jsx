@@ -4,7 +4,7 @@ import { closeMenu } from "../Slices/appSlice";
 import { YOUTUBE_API_COMMENTS } from "../utils/Constants";
 import Comment from "./Comment";
 
-const CommentsContainer = ({ vedioId }) => {
+const CommentsContainer = ({ vedioId }) => {  
   const dispatch = useDispatch();
 
   const [comments, setComments] = useState();
