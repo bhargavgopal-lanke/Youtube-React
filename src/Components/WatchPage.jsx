@@ -7,11 +7,11 @@ const WatchPage = () => {
   const selectedVedioId = searchParams.get("v");
 
   return (
-    <div className="WatchPage-sec">
-      <div>
-        <div className="flex px-5">
+    <div className="WatchPage-sec w-full">
+      <div className="flex px-5">
+        <div className="w-9/12">
           <iframe
-            width="1000"
+            width="900"
             height="500"
             src={"https://www.youtube.com/embed/" + selectedVedioId}
             title="YouTube video player"
@@ -20,14 +20,14 @@ const WatchPage = () => {
             referrerpolicy="strict-origin-when-cross-origin"
             allowfullscreen
           ></iframe>
-          <div className="">
-            <LiveChat />
-          </div>
         </div>
-        <div>
-          <h1 className="text-3xl font-bold my-5">Comments:</h1>
-          <CommentsContainer vedioId={selectedVedioId} />
+        <div className="w-3/12">
+          <LiveChat />
         </div>
+      </div>
+      <div>
+        <h1 className="text-3xl font-bold my-5">Comments:</h1>
+        <CommentsContainer vedioId={selectedVedioId} />
       </div>
     </div>
   );

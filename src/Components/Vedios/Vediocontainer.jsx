@@ -19,9 +19,10 @@ const Vediocontainer = () => {
   return (
     <div className="vedioContainer-sec flex flex-wrap">
       {vedios[0] && <AdVedioCard val={vedios[0]} />}
+      
       {vedios.map((val) => {
         return (
-          <Link to={"/watch?v=" + val.id} key={val.id}>
+          <Link to={"/watch?v=" + val.id} key={val.id} >
             <VedioCard val={val} />
           </Link>
         );
