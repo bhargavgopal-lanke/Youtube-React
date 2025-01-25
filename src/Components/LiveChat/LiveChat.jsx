@@ -25,11 +25,16 @@ const LiveChat = () => {
   const { messages } = useSelector((store) => store?.LiveChatInfo);
 
   return (
-    <div className="w-full h-[600px] m-2 p-2 border
-     border-black bg-slate-100 rounded-lg overflow-y-scroll">
-      {messages.map((msgs) => {
-        return <ChatMessage name={msgs.name} reply={msgs.reply} />;
-      })}
+    <div
+      className="w-full h-[600px] m-2 p-2 border
+     border-black bg-slate-100 rounded-lg overflow-y-scroll"
+    >
+      {
+        // Disclaimer: Don't use indexes as keys.
+        messages.map((msgs, i) => {
+          return <ChatMessage key={i} name={msgs.name} reply={msgs.reply} />;
+        })
+      }
     </div>
   );
 };
