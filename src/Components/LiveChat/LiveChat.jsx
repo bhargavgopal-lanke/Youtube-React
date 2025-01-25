@@ -54,21 +54,23 @@ const LiveChat = () => {
           })
         }
       </div>
-      <input
-        name="chat"
-        type="text"
-        value={chatMsg}
-        alt="chat-box"
-        onChange={(e) => setChatMsg(e?.target?.value)}
-        className="border border-black p-3"
-      />
-      <button
-        type="submit"
-        onClick={handleSubmit}
-        className="w-30 px-5 py-3 ml-3 bg-slate-500 border border-black text-white"
-      >
-        send
-      </button>
+      <div className="border border-black p-2">
+        <input
+          name="chat"
+          type="text"
+          value={chatMsg}
+          alt="chat-box"
+          onChange={(e) => setChatMsg(e?.target?.value)}
+          className="border border-black p-3 w-52"
+        />
+        <button
+          type="submit"
+          onClick={handleSubmit}
+          className="w-38 px-8 py-3 ml-3 bg-slate-500 border border-black text-white"
+        >
+          send
+        </button>
+      </div>
     </>
   );
 };
