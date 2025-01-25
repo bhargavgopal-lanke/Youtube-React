@@ -6,9 +6,8 @@ const Body = () => {
   return (
     <div className="flex">
       <SideBar />
-      <div className="">
-        <Outlet />
-      </div>
+
+      <Outlet />
     </div>
   );
 };
