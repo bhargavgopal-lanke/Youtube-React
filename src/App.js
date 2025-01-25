@@ -11,9 +11,8 @@ function App() {
   return (
     <>
       <Provider store={store}>
-        
         <BrowserRouter>
-        <Header />
+          <Header />
           <Routes>
             <Route path="/" element={<Body />}>
               <Route index element={<MainContainer />} />
