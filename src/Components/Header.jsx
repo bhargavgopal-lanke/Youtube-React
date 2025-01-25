@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { toggleMenu } from "../Slices/appSlice";
 import { YOUTUBE_SEARCH_API } from "../utils/Constants";
 import { cacheResults } from "../Slices/SearchDataSlice";
+import { Link } from "react-router";
 
 const Header = () => {
   const [searchText, setSearchText] = useState("");
@@ -31,7 +32,7 @@ const Header = () => {
       } else {
         searchAPICall();
       }
-    }, 200); 
+    }, 200);
 
     return () => {
       clearInterval(timer);
@@ -44,7 +45,7 @@ const Header = () => {
     setSuggestions(searchJson[1]);
 
     // update cache
-    // dispatch an action 
+    // dispatch an action
     // state is the key which I'm typing and payload is the API data.
     dispatch(cacheResults({ [searchText]: searchJson[1] }));
   };
@@ -55,10 +56,12 @@ const Header = () => {
         <div className="w-2/12">
           <div className="flex items-center gap-5">
             <GiHamburgerMenu
-              className="text-2xl cursor-pointer"
+              className="text-5xl cursor-pointer"
               onClick={handleClick}
             />
-            <img alt="youtube logo" src={youtubelogo} className="w-3/6" />
+            <Link to={"/"}>
+              <img alt="youtube logo" src={youtubelogo} className="w-3/6" />
+            </Link>
           </div>
         </div>
         <div className="w-7/12 flex items-center gap-5 justify-center my-auto">
