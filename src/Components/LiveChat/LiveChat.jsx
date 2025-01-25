@@ -22,7 +22,7 @@ const LiveChat = () => {
     };
   }, []);
 
-  const { messages } = useSelector((state) => state?.LiveChatInfo);
+  const { messages } = useSelector((store) => store?.LiveChatInfo);
 
   return (
     <div className="w-full h-[600px] m-2 p-2 border
